@@ -62,7 +62,12 @@ describe('SongQueue', function() {
     it('removes the song', function() {
       removeSpy = sinon.spy(SongQueue.prototype, 'remove');
       var songQueue = new SongQueue(songData1);
+
+      // console.log(JSON.stringify(songQueue.at(0),null,2));
+      // console.log(JSON.stringify(songQueue));
+
       songQueue.at(0).dequeue();
+      // console.log(JSON.stringify(songQueue.at(0),null,2));
       expect(removeSpy).to.have.been.called;
       SongQueue.prototype.remove.restore();
     });

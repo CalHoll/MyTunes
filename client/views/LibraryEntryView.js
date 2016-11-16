@@ -7,7 +7,12 @@ var LibraryEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
-      this.model.play();
+
+      // THIS HAS TO BE INCLUDED TO PASS ALL SPEC RUNNER TESTS, BUT REMOVES
+      // FUNCTIONALITY FROM THE APP BY PLAYING ON EACH CLICK.
+      // this.model.play();
+
+      this.model.enqueue();
     }
   },
 
